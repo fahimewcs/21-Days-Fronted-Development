@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Cards</title>
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body{
+    background: #f4f6f8;
+}
+
+
+.gift-header{
+    background: #0a2540;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.gift-header h1{
+    margin-bottom: 10px;
+}
+
+
+.gift-container{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.gift-card{
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gift-card:hover{
+    transform: translateY(-5px);
+}
+
+
+.gift-card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+
+.gift-content{
+    padding: 20px;
+    text-align: center;
+}
+
+.gift-content h3{
+    color: #0a2540;
+    margin-bottom: 8px;
+}
+
+.gift-content p{
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+
+.gift-price{
+    font-size: 24px;
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+
+.gift-content button{
+    padding: 10px 20px;
+    background: #0a2540;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gift-content button:hover{
+    background: #143d66;
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="gift-header">
+    <h1>Gift Cards</h1>
+    <p>Perfect gifts for your loved ones</p>
+</div>
+
+
+<section class="gift-container">
+
+    <div class="gift-card">
+        <img src="gift1.jpg" alt="Gift Card">
+        <div class="gift-content">
+            <h3>Travel Gift Card</h3>
+            <p>Use for flights, hotels & packages</p>
+            <div class="gift-price">$50</div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <img src="gift2.jpg" alt="Gift Card">
+        <div class="gift-content">
+            <h3>Holiday Special</h3>
+            <p>Perfect for festive travel</p>
+            <div class="gift-price">$100</div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <img src="gift3.jpg" alt="Gift Card">
+        <div class="gift-content">
+            <h3>Premium Travel Card</h3>
+            <p>Luxury stays & premium flights</p>
+            <div class="gift-price">$200</div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>
