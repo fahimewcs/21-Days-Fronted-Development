@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions and loops</title>
+</head>
+<body>
+    <h4>Conditions and Loops Practices</h4>
+
+
+    <script>
+        let year = prompt("The Boat company was launched at:",'');
+        if (year == 2025)alert('The guessing is right');
+
+        year = prompt("The journey will start at:");
+        if (year == 2027){
+            alert(`This is right, the year is ${year}`);
+
+        }else{
+            alert(`${year} is not right`)
+        }
+
+
+        let age = prompt('How old are you?');
+
+        if (age > 18) {
+        console.log(age+' is true')
+        } else {
+        console.log(age+' is not true')
+        }
+
+
+        let number = prompt("Enter any number");
+        (number== 30)?alert(`${number} is true`):alert('false')
+
+        let user = "";
+        alert(user ?? "Anonymous");
+
+        user = "Kabir";
+        alert(user ?? "Anonymous");
+
+
+        let firstName = "Abir";
+        let lastName = null;
+        let nickName = "Nahid";
+
+        
+        alert(firstName ?? lastName ?? nickName ?? "Anonymous");
+
+        let i=1;
+        while(i<5){
+            alert(i);
+            i++
+        }
+
+        for (let i = 0; i < 5; i++) alert( i );
+
+        for (let i = 0; i < 5; ++i) alert( i );
+
+
+
+
+    </script>
+    
+</body>
+</html>
