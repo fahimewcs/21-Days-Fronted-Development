@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            padding: 0px 25px;
+        }
+
+
+        #main-header {
+            background-color: rgb(0, 126, 0);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #header-title {
+            color: white;
+            font-size: 40px;
+        }
+
+        #main {
+            border: 1px solid rgb(180, 180, 180);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .title {
+            margin: 20px 0px;
+            font-size: 30px;
+        }
+
+        .title:first-child {
+            margin-top: 0px;
+        }
+
+        input {
+            height: 30px;
+            border: 1px solid rgb(180, 180, 180);
+        }
+
+        .btn {
+            background-color: rgb(39, 39, 39);
+            color: white;
+            width: 100px;
+            border: 0px;
+            cursor: pointer;
+        }
+
+        .list-group-item {
+            border-bottom: 1px solid rgb(180, 180, 180);
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+
+        .list-group-item:last-child {
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>Javascriipt DOM</title>
+</head>
+<body>
+
+    <header id="main-header" class="bg-success">
+    <div class="container">
+      <h1 id="header-title">Item Lister</h1>
+    </div> 
+  </header>
+
+  <div class="container">
+    <div id="main" class="card card-body">
+
+      <h2 class="title">Add Items</h2>
+
+      <form>
+        <input type="text">
+        <input type="submit" class="btn" value="Submit">
+      </form>
+
+      <h2 class="title">Items</h2>
+
+      <ul id="items" class="list-group">
+        <li class="list-group-item">item 1</li>
+        <li class="list-group-item">item 2</li>
+        <li class="list-group-item">item 3</li>
+        <li class="list-group-item">item 4</li>
+      </ul>
+
+      <br>
+      <button class="btn btn-dark btn-block" id="button">Button</button>
+      <br>
+
+      <div id="box" style="width:400px; height:200px; background:greenyellow">
+
+      </div>
+
+    </div> 
+  </div> 
+
+
+  <script>
+    console.dir(document)
+    console.log(document.domain);
+    console.log(document.URL);
+    console.log(document.title);
+    document.title = 'hello js dom';
+    console.log(document.doctype);
+    console.log(document.doctype);
+    console.log(document.head);
+    console.log(document.body);
+    console.log(document.all);
+    console.log(document.all[11]);
+    // document.all[11].textContent = 'hello';
+    console.log(document.forms);
+    console.log(document.links);
+
+
+    // console.log(document.getElementById('header-title'));
+    let headerTitle = document.getElementById('header-title');
+    // console.log(headerTitle);
+    // headerTitle.textContent = 'Hello';
+    // console.log(headerTilte.textContent);
+    // headerTilte.innerText = 'World';
+    // console.log(header.innerText);
+    // headerTitle.innerHTML = '<h1>Hello<h1>';
+    headerTitle.style.borderBottom = '10px solid black';
+
+
+    let items = document.getElementsByClassName('list-group-item');
+    console.log(items);
+    console.log(items[2]);
+    items[2].textContent = 'Welcome!';
+    items[2].style.fontWeight = 'bold';
+    items[2].style.backgroundColor = 'green';
+
+
+
+    let header = document.querySelector('#main-header');
+    header.style.borderBottom = '5px dotted yellow';
+
+    let input = document.querySelector('input');
+    input.value = 'Hello World'
+
+
+    let submit = document.querySelector('input[type="submit"]');
+    submit.value = 'SEND';
+
+    let item = document.querySelector('.list-group-item');
+    item.style.color = 'red';
+
+    let lastItem = document.querySelector('.list-group-item:last-child');
+    lastItem.style.color = 'blue';
+
+    let secItem = document.querySelector('.list-group-item:nth-child(2)');
+    secItem.style.color = 'coral';
+
+    let thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+    thirdItem.style.color = 'yellow';
+
+    let titles = document.querySelectorAll('.title');
+    console.log(titles);
+    titles[0].textContent = 'Hello';
+
+    let odd = document.querySelectorAll('li:nth-child(odd)');
+    console.log(odd);
+
+    let even = document.querySelectorAll('li:nth-child(even)');
+    console.log(even);
+
+    let li = document.querySelectorAll('li');
+
+    for(let i=0; i<even.length; i++){
+        odd[i].style.backgroundColor = '#f4f4f4';
+        even[i].style.backgroundColor = '#ccc';
+    }
+
+
+
+    let Div = document.createElement('div');
+    Div.className = 'hello';
+    Div.id = 'world';
+    Div.setAttribute('title','Hello Div');
+    console.log(Div);
+
+
+    let newDiv = document.createElement('div');
+    newDiv.setAttribute('class', 'hello newDiv');
+
+    let divText = document.createTextNode('Hello world');
+    newDiv.appendChild(divText);
+    console.log(newDiv);
+
+
+    let button  = document.getElementById('button')
+    button.addEventListener('click', function(e){
+        alert('button was clicked');
+        document.querySelector('#main').style.backgroundColor = "blue";
+
+        console.log(e.target);
+        console.log(e.target.id);
+        console.log(e.target.className);
+        console.log(e.target.classList);
+
+        console.log(e.altKey);
+        console.log(e.ctrlKey);
+        console.log(e.shiftKey);
+    });
+
+    function runEvent(e){
+        console.log(e.type);
+    }
+
+
+    button.addEventListener('click', runEvent)
+    button.addEventListener('dblclick',runEvent);
+    button.addEventListener('mousedown',runEvent);
+    button.addEventListener('mouseup',runEvent);
+ 
+    let box  = document.getElementById('box');
+    box.addEventListener('mouseenter', runEvent);
+    box.addEventListener('mouseleave', runEvent);
+
+    box.addEventListener('mouseover', runEvent);
+    box.addEventListener('mouseout', runEvent);
+    
+    let itemInput = document.querySelector('input[type="text"]');
+     let form = document.querySelector('form');
+
+    itemInput.addEventListener('keydown', runEvent);
+    itemInput.addEventListener('keyup', runEvent);
+    itemInput.addEventListener('keypress', runEvent);
+
+    itemInput.addEventListener('focus', runEvent);
+    itemInput.addEventListener('blur', runEvent);
+
+    itemInput.addEventListener('cut', runEvent);
+    itemInput.addEventListener('paste', runEvent);
+
+    form.addEventListener('submit', runEvent);
+
+
+
+    
+
+  </script>
+    
+</body>
+</html>
