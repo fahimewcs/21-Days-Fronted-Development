@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notice Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #2196f3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .notice-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .notice-card {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .notice-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    }
+
+    .notice-date {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .notice-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .notice-desc {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media screen and (max-width: 600px) {
+      .notice-card {
+        padding: 15px;
+      }
+      .notice-title {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>School Notices</h1>
+  </header>
+
+  <div class="notice-container">
+    <div class="notice-card">
+      <div class="notice-date">27 Jan 2026</div>
+      <div class="notice-title">Midterm Exam Schedule</div>
+      <div class="notice-desc">
+        The midterm exams for all classes will start from 15th February. Please check your respective class timetable.
+      </div>
+    </div>
+
+    <div class="notice-card">
+      <div class="notice-date">20 Jan 2026</div>
+      <div class="notice-title">School Annual Day</div>
+      <div class="notice-desc">
+        The Annual Day program will be held on 5th March in the school auditorium. All students are requested to participate.
+      </div>
+    </div>
+
+    <div class="notice-card">
+      <div class="notice-date">15 Jan 2026</div>
+      <div class="notice-title">New Library Books</div>
+      <div class="notice-desc">
+        The school library has added new books in science and mathematics sections. Students are encouraged to check them out.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
