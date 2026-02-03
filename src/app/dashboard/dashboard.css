@@ -1,0 +1,28 @@
+.dashboard {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: 1px solid #d47c7c;
+  border-radius: 8px;
+  width: 1200px;
+  margin: 20px auto;
+  background-color: hsl(173, 99%, 49%);
+}
+
+.counter-display p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.counter-controls button {
+  margin: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.counter-controls button:hover {
+  background-color: #007bff;
+  color: white;
+}
