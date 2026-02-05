@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="school-logo.jpg">
+  <title>SKD Fees</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  
+}
+
+body{
+  background: #dbdad9;
+}
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap; /* allow wrapping */
+      gap: 20px;       /* space between cards */
+      justify-content: center; /* center cards */
+      padding: 20px;
+    }
+
+    .card {
+      background: #02f9f1;
+      flex: 1 1 calc(33.33% - 40px); /* 3 cards per row, account for gap */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box; /* important to include padding in width */
+    }
+
+
+    @media screen and (max-width: 900px) {
+    .card {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row on smaller screens */
+    }
+    }
+
+    @media screen and (max-width: 600px) {
+      .card {
+        flex: 1 1 100%; /* 1 card per row on mobile */
+      }
+    }
+
+    header{
+      background: linear-gradient(90deg, #9FCCFA, #0974F1);
+      text-align: center;
+      font-size: 20px;
+      height: 50px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+ <!-- <div>
+    <div class="card">
+      <h2 id="class1" style="text-align: center;">Class 1</h2>
+      <p><strong>Monthly Fee:</strong> <span id="monthly"></span></p>
+      <p><strong>Admission Form Fee:</strong> <span id="admissionForm"></span></p>
+      <p><strong>Student Activity Fee:</strong> <span id="studentActivity"></span></p>
+      <p><strong>School Development Fee:</strong> <span id="schoolDevelopment"></span></p>
+      <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities"></span></p>
+      <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity"></span></p>
+    </div>
+
+    <div class="card">
+      <h2 id="class1" style="text-align: center;">Class 2</h2>
+      <p><strong>Monthly Fee:</strong> <span id="monthly">500</span></p>
+      <p><strong>Admission Form Fee:</strong> <span id="admissionForm">1000</span></p>
+      <p><strong>Student Activity Fee:</strong> <span id="studentActivity">1000</span></p>
+      <p><strong>School Development Fee:</strong> <span id="schoolDevelopment">2000</span></p>
+      <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities">510</span></p>
+      <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity">1200</span></p>
+  </div>
+
+ </div> -->
+  <header>School of Skills Development's Fees</header>
+    <div class="cards-container">
+
+        <div class="card">
+        <h2 id="class1" style="text-align: center;">Class 1</h2>
+        <p><strong>Monthly Fee:</strong> <span id="monthly"></span></p>
+        <p><strong>Admission Form Fee:</strong> <span id="admissionForm"></span></p>
+        <p><strong>Student Activity Fee:</strong> <span id="studentActivity"></span></p>
+        <p><strong>School Development Fee:</strong> <span id="schoolDevelopment"></span></p>
+        <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities"></span></p>
+        <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity"></span></p>
+      </div>
+
+        <div class="card">
+          <h2 id="class1" style="text-align: center;">Class 2</h2>
+          <p><strong>Monthly Fee:</strong> <span id="monthly2"></span></p>
+          <p><strong>Admission Form Fee:</strong> <span id="admissionForm2"></span></p>
+          <p><strong>Student Activity Fee:</strong> <span id="studentActivity2"></span></p>
+          <p><strong>School Development Fee:</strong> <span id="schoolDevelopment2"></span></p>
+          <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities2"></span></p>
+          <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity2"></span></p>
+        </div>
+
+
+        <div class="card">
+          <h2 id="class1" style="text-align: center;">Class 3</h2>
+          <p><strong>Monthly Fee:</strong> <span id="monthly">500</span></p>
+          <p><strong>Admission Form Fee:</strong> <span id="admissionForm">1000</span></p>
+          <p><strong>Student Activity Fee:</strong> <span id="studentActivity">1000</span></p>
+          <p><strong>School Development Fee:</strong> <span id="schoolDevelopment">2000</span></p>
+          <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities">510</span></p>
+          <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity">1200</span></p>
+        </div>
+
+
+
+        <div class="card">
+          <h2 id="class1" style="text-align: center;">Class 5</h2>
+          <p><strong>Monthly Fee:</strong> <span id="monthly">500</span></p>
+          <p><strong>Admission Form Fee:</strong> <span id="admissionForm">1000</span></p>
+          <p><strong>Student Activity Fee:</strong> <span id="studentActivity">1000</span></p>
+          <p><strong>School Development Fee:</strong> <span id="schoolDevelopment">2000</span></p>
+          <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities">510</span></p>
+          <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity">1200</span></p>
+        </div>
+
+        <div class="card">
+          <h2 id="class1" style="text-align: center;">Class 6</h2>
+          <p><strong>Monthly Fee:</strong> <span id="monthly">500</span></p>
+          <p><strong>Admission Form Fee:</strong> <span id="admissionForm">1000</span></p>
+          <p><strong>Student Activity Fee:</strong> <span id="studentActivity">1000</span></p>
+          <p><strong>School Development Fee:</strong> <span id="schoolDevelopment">2000</span></p>
+          <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities">510</span></p>
+          <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity">1200</span></p>
+        </div>
+
+        <div class="card">
+          <h2 id="class1" style="text-align: center;">Class 7</h2>
+          <p><strong>Monthly Fee:</strong> <span id="monthly">500</span></p>
+          <p><strong>Admission Form Fee:</strong> <span id="admissionForm">1000</span></p>
+          <p><strong>Student Activity Fee:</strong> <span id="studentActivity">1000</span></p>
+          <p><strong>School Development Fee:</strong> <span id="schoolDevelopment">2000</span></p>
+          <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities">510</span></p>
+          <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity">1200</span></p>
+        </div>
+
+        <div class="card">
+          <h2 id="class1" style="text-align: center;">Class 8</h2>
+          <p><strong>Monthly Fee:</strong> <span id="monthly">500</span></p>
+          <p><strong>Admission Form Fee:</strong> <span id="admissionForm">1000</span></p>
+          <p><strong>Student Activity Fee:</strong> <span id="studentActivity">1000</span></p>
+          <p><strong>School Development Fee:</strong> <span id="schoolDevelopment">2000</span></p>
+          <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities">510</span></p>
+          <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity">1200</span></p>
+        </div>
+
+        <div class="card">
+          <h2 id="class1" style="text-align: center;">Class 9</h2>
+          <p><strong>Monthly Fee:</strong> <span id="monthly">500</span></p>
+          <p><strong>Admission Form Fee:</strong> <span id="admissionForm">1000</span></p>
+          <p><strong>Student Activity Fee:</strong> <span id="studentActivity">1000</span></p>
+          <p><strong>School Development Fee:</strong> <span id="schoolDevelopment">2000</span></p>
+          <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities">510</span></p>
+          <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity">1200</span></p>
+        </div>
+
+        <div class="card">
+          <h2 id="class1" style="text-align: center;">Class 10</h2>
+          <p><strong>Monthly Fee:</strong> <span id="monthly">500</span></p>
+          <p><strong>Admission Form Fee:</strong> <span id="admissionForm">1000</span></p>
+          <p><strong>Student Activity Fee:</strong> <span id="studentActivity">1000</span></p>
+          <p><strong>School Development Fee:</strong> <span id="schoolDevelopment">2000</span></p>
+          <p><strong>Multimedia Facilities Fee:</strong> <span id="multiMediaFacilities">510</span></p>
+          <p><strong>Annual Cultural Activity Fee:</strong> <span id="annualCulturalActivity">1200</span></p>
+        </div>
+        
+    </div>
+  
+
+  <script>
+    fetch('https://dummyjson.com/c/9224-b26c-4c6b-a1bf')
+      .then(response => response.json())
+      .then(data => {
+        
+        document.getElementById("monthly").innerText = data.monthlyFee;
+        document.getElementById("admissionForm").innerText = data.admissionFormFee;
+        document.getElementById("studentActivity").innerText = data.studentActivityFee;
+        document.getElementById("schoolDevelopment").innerText = data.schoolDevelopmentFee;
+        document.getElementById("multiMediaFacilities").innerText = data.multimediaFacilitiesFee;
+        document.getElementById("annualCulturalActivity").innerText = data.annualCulturalActivityFee;
+      })
+      
+      fetch('https://dummyjson.com/c/9224-b26c-4c6b-a1bf')
+      .then(response => response.json())
+      .then(data => {
+        
+        document.getElementById("monthly2").innerText = data.monthlyFee;
+        document.getElementById("admissionForm2").innerText = data.admissionFormFee;
+        document.getElementById("studentActivity2").innerText = data.studentActivityFee;
+        document.getElementById("schoolDevelopment2").innerText = data.schoolDevelopmentFee;
+        document.getElementById("multiMediaFacilities2").innerText = data.multimediaFacilitiesFee;
+        document.getElementById("annualCulturalActivity2").innerText = data.annualCulturalActivityFee;
+      })
+  </script>
+
+</body>
+</html>

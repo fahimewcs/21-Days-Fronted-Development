@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="box">Hover me</div>
+
+<script>
+  let box = document.getElementById('box');
+
+  function runEvent(e) {
+    console.log(e.type);
+  }
+
+  box.addEventListener('mouseenter', runEvent);
+  box.addEventListener('mouseleave', runEvent);
+</script>
+
+<style>
+  #box {
+    width: 200px;
+    height: 200px;
+    background: orange;
+  }
+</style>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Fee Structure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #007bff;
+      text-align: center;
+    }
+
+    .fee-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+      font-weight: 500;
+    }
+
+    .total {
+      margin-top: 10px;
+      font-weight: bold;
+      background-color: #ffd700;
+      padding: 5px;
+      text-align: center;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>School Fee Structure (Class 1 to 10)</h1>
+
+  <div class="cards-container" id="cardsContainer">
+    <!-- Cards will appear here dynamically -->
+  </div>
+
+  <script>
+    // Fetch the JSON data
+    fetch('feesdata.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('cardsContainer');
+
+        data.classes.forEach(item => {
+          const fees = item.fees;
+          const totalFee = fees.monthlyFee + fees.admissionFormFee + fees.studentActivityFee +
+                           fees.schoolDevelopmentFee + fees.multimediaFacilitiesFee + fees.annualCulturalActivityFee;
+
+          const card = document.createElement('div');
+          card.classList.add('card');
+
+          card.innerHTML = `
+            <h2>${item.class}</h2>
+            <div class="fee-item"><span>Monthly Fee:</span> <span>${fees.monthlyFee} ${data.currency}</span></div>
+            <div class="fee-item"><span>Admission Form Fee:</span> <span>${fees.admissionFormFee} ${data.currency}</span></div>
+            <div class="fee-item"><span>Student Activity Fee:</span> <span>${fees.studentActivityFee} ${data.currency}</span></div>
+            <div class="fee-item"><span>School Development Fee:</span> <span>${fees.schoolDevelopmentFee} ${data.currency}</span></div>
+            <div class="fee-item"><span>Multimedia Facilities Fee:</span> <span>${fees.multimediaFacilitiesFee} ${data.currency}</span></div>
+            <div class="fee-item"><span>Annual Cultural Activity Fee:</span> <span>${fees.annualCulturalActivityFee} ${data.currency}</span></div>
+            <div class="total">Total Fee: ${totalFee} ${data.currency}</div>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+  </script>
+
+</body>
+</html>

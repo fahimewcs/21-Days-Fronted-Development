@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Eye</title>
+<link rel="icon" type="image/x-icon" href="icon.jpg">
+
+<style>
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Layout */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar container */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 70px;              /* collapsed width */
+    background: #0a2540;
+    color: white;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Checkbox for toggle */
+#sidebar-toggle {
+    display: none;
+}
+
+/* Sidebar toggle button */
+.sidebar .toggle-btn {
+    cursor: pointer;
+    font-size: 28px;
+    padding: 15px;
+}
+
+/* Sidebar menu */
+.sidebar .menu {
+    list-style: none;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Expand sidebar when checkbox checked */
+#sidebar-toggle:checked ~ .sidebar {
+    width: 240px;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    margin-left: 70px;   /* same as collapsed sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Shift main content when sidebar expands */
+#sidebar-toggle:checked ~ .sidebar + .main-content {
+    margin-left: 240px;  /* same as expanded sidebar */
+}
+
+/* Header/navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #1a3c70;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1100;
+}
+
+header #brand {
+    margin-left: 10px;
+}
+
+header .btn {
+    display: flex;
+    gap: 10px;
+}
+
+header .btn-item {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+header .btn1 { background: #2ecc71; }
+header .btn2 { background: #3498db; }
+
+/* Hamburger in header */
+header .header-toggle {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Content below header */
+main {
+    padding-top: 80px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #1a3c70;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+
+    <!-- Sidebar toggle checkbox -->
+    <input type="checkbox" id="sidebar-toggle">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <label for="sidebar-toggle" class="toggle-btn">☰</label>
+        <ul class="menu">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <header>
+            <div style="display:flex; align-items:center;">
+                <label for="sidebar-toggle" class="header-toggle">☰</label>
+                <h1 id="brand">Blue Eye</h1>
+            </div>
+            <div class="btn">
+                <button class="btn-item btn1">Sign Up</button>
+                <button class="btn-item btn2">Login</button>
+            </div>
+        </header>
+
+        <main>
+            <h2>Welcome to Blue Eye</h2>
+            <p>This is the main content area. When you expand the sidebar, this content shifts to the right.</p>
+        </main>
+    </div>
+
+    <footer> &copy; 2026 All Rights Reserved</footer>
+
+</body>
+</html>
