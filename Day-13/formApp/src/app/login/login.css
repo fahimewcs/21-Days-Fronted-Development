@@ -109,3 +109,16 @@
 .signup-text a:hover {
   text-decoration: underline;
 }
+
+.error {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+.login-btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
