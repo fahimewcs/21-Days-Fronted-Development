@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h3>Function Practice</h3>
+
+    <script>
+        function myFunction() {
+        alert("Hello Dhaka");
+        }
+
+        myFunction();
+
+
+        function showMessage() {
+        let message = "Hello, This is JavaScript!"; 
+
+        alert( message );
+        }
+
+        showMessage(); 
+
+
+        function showMessage(a, b) { 
+        alert(a + ': ' + b);
+        }
+
+        showMessage('Bangladesh', 'Dhaka'); 
+        showMessage('Maldives', "Male");
+
+
+        function display(a,b){
+            if(a>b){
+                alert(`${a} is greater than ${b}`)
+            }
+            else{
+                alert(`${b} is greater than ${a}`)
+            }
+
+        }
+        display(3,8);
+
+
+        let age = prompt("Enter the age");
+        function checkAge(a, b, c, d){
+            if(a<=b){
+                alert(`${a} age will seat row A`)
+            }
+            else if(a<=c){
+                alert(`${a} age will seat row B`)
+
+            }else{
+                alert(`${a} age will seat row C`)
+            }
+
+        }
+        checkAge(age,30,50,70);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

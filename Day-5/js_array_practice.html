@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Arrays</title>
+</head>
+<body>
+    <p id="car">Car</p>
+
+    <p id="fruit"></p>
+    <p id="fruitList"></p>
+    <button onclick="myFunction()">Add Fruit</button>
+
+    <script>
+        const cars = ["Bus", "Rickshaw", "Truck"];
+        document.getElementById("car").innerHTML = cars;
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        let myList = fruits.toString();
+        document.getElementById("fruit").innerHTML = myList;
+
+        let text = '<ul>';
+        for(let i=0; i< fruits.length; i++){
+            text += '<li>' + fruits[i] + '</li>';
+        }
+        text += '</ul>';
+
+        document.getElementById('fruitList').innerHTML= text;
+
+
+        function myFunction() {
+            fruits.push("Lemon");
+            document.getElementById("fruit").innerHTML = fruits;
+        }
+
+
+        fruits.splice(1, 2);
+        console.log(fruits);
+
+        fruits.splice(1, 1, 'Lemon');
+        console.log(fruits);
+
+
+    </script>
+</body>
+</html>

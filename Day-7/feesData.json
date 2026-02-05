@@ -1,0 +1,115 @@
+{
+  "currency": "BDT",
+  "classes": [
+    {
+      "class": "Class-1",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-2",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-3",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-4",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-5",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-6",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-7",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-8",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-9",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    },
+    {
+      "class": "Class-10",
+      "fees": {
+        "monthlyFee": 2000,
+        "admissionFormFee": 1200,
+        "studentActivityFee": 520,
+        "schoolDevelopmentFee": 1100,
+        "multimediaFacilitiesFee": 2500,
+        "annualCulturalActivityFee": 600
+      }
+    }
+  ]
+}

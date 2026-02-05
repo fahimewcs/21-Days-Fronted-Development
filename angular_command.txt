@@ -1,0 +1,12 @@
+ng new my-app
+cd my-app
+ng serve
+
+ng generate component header
+ng g c header
+
+ng generate service user
+ng g s user
+
+ng g s auth
+ng g guard auth
