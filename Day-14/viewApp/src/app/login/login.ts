@@ -24,15 +24,23 @@ export class Login {
 
 
   login() {
-    // if (this.loginForm.invalid) {
-    //   this.loginForm.markAllAsTouched();
-    //   return;
-    // }
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+      return;
+    }
 
+    const savedUser = localStorage.getItem('user');
+
+    if (!savedUser) {
+      alert('No user found. Please signup first.');
+      return;
+    }
+    
+    const user = JSON.parse(savedUser);
     const { email, password } = this.loginForm.value;
 
-    if (email === 'hello@email.com' && password === '123') {
-      this.auth.login('Admin');
+    if (email === user.email && password === user.password) {
+      this.auth.login(user.name);
       this.router.navigate(['/dashboard']);
     } else {
       alert('Invalid email or password');

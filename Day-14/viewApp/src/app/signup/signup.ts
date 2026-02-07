@@ -27,8 +27,13 @@ export class Signup {
       return;
     }
 
-    console.log(this.signupForm.value);
-    alert('Registration Successful');
-  }
+      const userData = this.signupForm.value;
+
+      // Save to localStorage
+      localStorage.setItem('user', JSON.stringify(userData));
+
+      alert('Registration Successful');
+      console.log('Saved user:', userData);
+    }
 
 }
