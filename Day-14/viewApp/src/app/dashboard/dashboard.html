@@ -30,8 +30,33 @@
     <!-- Main Section -->
     <section class="content">
       <p>Welcome to the admin dashboard!</p>
-      <!-- You can place dashboard widgets or router-outlet here for child pages -->
       
+      <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let user of users">
+  <td>{{ user.id }}</td>
+  <td>{{ user.name }}</td>
+  <td>{{ user.email }}</td>
+  <td>{{ user.phone }}</td>
+</tr>
+
+            @if (users.length === 0) {
+              <tr>
+                <td colspan="4" class="no-data">No data found</td>
+              </tr>
+            }
+          </tbody>
+      </table>
+
     </section>
 
     <!-- Footer -->
