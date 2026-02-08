@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+  border-radius: 10px;
 }
 
 /* NAVBAR */
@@ -15,6 +16,8 @@
   color: #fff;
   position: sticky;
   top: 0;
+  border: 5px solid rgb(246, 1, 1);
+  
 }
 
 .logo {
@@ -107,7 +110,7 @@
 }
 
 
-/* HERO BODY */
+/* Main BODY */
 .main-body {
   height: 80vh;
   background: linear-gradient(to right, #f5f7fa, #c3cfe2);
@@ -148,7 +151,7 @@
 
 /* FOOTER */
 .footer {
-  background: #1f1f1f;
+  background: linear-gradient(to right, #f40606, #4e54c8);
   color: #ccc;
   padding: 25px;
   text-align: center;

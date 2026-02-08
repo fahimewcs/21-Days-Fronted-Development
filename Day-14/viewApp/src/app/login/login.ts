@@ -40,6 +40,7 @@ export class Login {
     const { email, password } = this.loginForm.value;
 
     if (email === user.email && password === user.password) {
+      localStorage.setItem('token', 'fake-jwt-token');
       this.auth.login(user.name);
       this.router.navigate(['/dashboard']);
     } else {
