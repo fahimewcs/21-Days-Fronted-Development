@@ -1,0 +1,38 @@
+<nav class="navbar">
+  <div class="logo">Wonder Biz</div>
+  <ul class="nav-links">
+    <li><a [routerLink]="['/']">Home</a></li>
+    <li><a [routerLink]="['/cart']">Cart ({{ cart.items().length }})</a></li>
+  </ul>
+</nav>
+
+<section class="cart-container">
+
+  <!-- Empty cart message -->
+  <p *ngIf="cart.items().length === 0">Your Cart is empty</p>
+
+  <!-- List of items -->
+  <div *ngFor="let item of cart.items(); let i = index" class="cart-item">
+    <div>
+      <strong>{{ item.name }}</strong>
+      <p>৳ {{ item.price }}</p>
+    </div>
+
+    <div class="quantity">
+      <button (click)="cart.decrease(item.id)">-</button>
+      <span>{{ item.quantity }}</span>
+      <button (click)="cart.increase(item.id)">+</button>
+    </div>
+
+    <div>
+      <p>Subtotal: ৳{{ item.price * item.quantity }}</p>
+      <button (click)="cart.removeItem(item.id)">Remove</button>
+    </div>
+  </div>
+
+  <hr *ngIf="cart.items().length > 0">
+
+  <h3 *ngIf="cart.items().length > 0">Total: ৳{{ cart.totalPrice() }}</h3>
+  <button *ngIf="cart.items().length > 0" (click)="cart.clearCart()">Clear Cart</button>
+
+</section>
