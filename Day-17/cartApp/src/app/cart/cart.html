@@ -1,38 +1,61 @@
-<nav class="navbar">
-  <div class="logo">Wonder Biz</div>
-  <ul class="nav-links">
-    <li><a [routerLink]="['/']">Home</a></li>
-    <li><a [routerLink]="['/cart']">Cart ({{ cart.items().length }})</a></li>
-  </ul>
-</nav>
+<div class="cart-page-container">
 
-<section class="cart-container">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo-12.png" alt="Wonder Biz Logo" />
+      <span>Wonder Biz</span>
+    </div>
+    <ul class="nav-links">
+      <li><a [routerLink]="['/']">Home</a></li>
+      <li><a [routerLink]="['/cart']">Cart ({{ cart.items().length }})</a></li>
+    </ul>
+  </nav>
 
-  <!-- Empty cart message -->
-  <p *ngIf="cart.items().length === 0">Your Cart is empty</p>
+  <!-- Hero / Page Title -->
+  <section class="cart-hero">
+    <h1>Your Shopping Cart</h1>
+    <p *ngIf="cart.items().length === 0">It looks like you haven’t added any items yet.</p>
+    <p *ngIf="cart.items().length > 0">Review your items below before checkout.</p>
+  </section>
 
-  <!-- List of items -->
-  <div *ngFor="let item of cart.items(); let i = index" class="cart-item">
-    <div>
-      <strong>{{ item.name }}</strong>
-      <p>৳ {{ item.price }}</p>
+  <!-- Cart Items -->
+  <section class="cart-container" *ngIf="cart.items().length > 0">
+    <div *ngFor="let item of cart.items(); let i = index" class="cart-item-card">
+      
+      <!-- Product info -->
+      <div class="item-info">
+        <strong>{{ item.name }}</strong>
+        <p>৳ {{ item.price }}</p>
+      </div>
+
+      <!-- Quantity controls -->
+      <div class="item-quantity">
+        <button (click)="cart.decrease(item.id)">-</button>
+        <span>{{ item.quantity }}</span>
+        <button (click)="cart.increase(item.id)">+</button>
+      </div>
+
+      <!-- Subtotal & remove -->
+      <div class="item-subtotal">
+        <p>Subtotal: ৳{{ item.price * item.quantity }}</p>
+        <button class="remove-btn" (click)="cart.removeItem(item.id)">Remove</button>
+      </div>
     </div>
 
-    <div class="quantity">
-      <button (click)="cart.decrease(item.id)">-</button>
-      <span>{{ item.quantity }}</span>
-      <button (click)="cart.increase(item.id)">+</button>
+    <hr>
+
+    <!-- Total -->
+    <div class="cart-summary">
+      <h3>Total: ৳{{ cart.totalPrice() }}</h3>
+      <button class="clear-btn" (click)="cart.clearCart()">Clear Cart</button>
     </div>
+  </section>
 
-    <div>
-      <p>Subtotal: ৳{{ item.price * item.quantity }}</p>
-      <button (click)="cart.removeItem(item.id)">Remove</button>
-    </div>
-  </div>
+  <!-- Empty cart -->
+  <section class="cart-empty" *ngIf="cart.items().length === 0">
+    <p>Your cart is empty. Start adding some products!</p>
+    <a [routerLink]="['/']" class="shop-btn">Go Shopping</a>
+  </section>
 
-  <hr *ngIf="cart.items().length > 0">
-
-  <h3 *ngIf="cart.items().length > 0">Total: ৳{{ cart.totalPrice() }}</h3>
-  <button *ngIf="cart.items().length > 0" (click)="cart.clearCart()">Clear Cart</button>
-
-</section>
+</div>

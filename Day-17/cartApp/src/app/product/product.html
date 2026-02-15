@@ -1,16 +1,35 @@
+<!-- Navbar -->
 <nav class="navbar">
-  <div class="logo">Wonder Biz</div>
+  <div class="logo">
+    <img src="logo-12.png" alt="Wonder Biz Logo" />
+    <span>Wonder Biz</span>
+  </div>
   <ul class="nav-links">
     <li><a [routerLink]="['/']">Home</a></li>
     <li><a [routerLink]="['/cart']">Cart ({{ cart.items().length }})</a></li>
   </ul>
 </nav>
 
+<!-- Products Section -->
 <section class="product-container">
   <div class="product-card" *ngFor="let product of products">
+    <img src="assets/product-placeholder.png" alt="{{ product.name }}" />
     <h3>{{ product.name }}</h3>
     <p>৳ {{ product.price }}</p>
-    <button (click)="addToCart(product)">Add to Cart</button>
+    <button class="add-btn" (click)="addToCart(product)">Add to Cart</button>
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2026 Wonder Biz | All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Support</a>
+    </div>
+  </div>
+</footer>
+
 
