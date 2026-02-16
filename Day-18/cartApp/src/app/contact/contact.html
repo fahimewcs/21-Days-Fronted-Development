@@ -1,0 +1,81 @@
+
+
+  <nav class="navbar">
+    <div class="logo">
+    <img src="logo-12.png" alt="Wonder Biz Logo" />
+    <span>Wonder Biz</span>
+  </div>
+    <ul class="nav-links">
+      <li><a href="#" [routerLink]="['']">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#" [routerLink]="['/contact']">Contact</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+    <button class="login-btn" [routerLink]="['/login']">Login</button>
+    <button class="signup-btn">Sign Up</button>
+  </div>
+  </nav>
+
+  
+  <section class="main-body">
+
+  <!-- CONTENT GRID -->
+  <div class="content-grid">
+
+    <!-- ADDRESSES -->
+    <div class="address-box">
+      <h3>Head Office</h3>
+      <p>Wonder Biz Ltd.</p>
+      <p>Dhaka, Bangladesh</p>
+      <p>Email: info@wonderbiz.com</p>
+      <p>Phone: +880 1234 567890</p>
+
+      <hr />
+
+      <h3>Branch Office</h3>
+      <p>Wonder Biz Chattogram</p>
+      <p>Chattogram, Bangladesh</p>
+      <p>Email: support@wonderbiz.com</p>
+      <p>Phone: +880 9876 543210</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Your email" required />
+        </div>
+
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="Your phone number" required />
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+  
+  <footer class="footer">
+    <p>© 2026 Wonder Biz | All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Support</a>
+    </div>
+  </footer>
+
