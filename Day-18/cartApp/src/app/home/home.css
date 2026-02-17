@@ -13,13 +13,17 @@
   align-items: center;
   padding: 15px 40px;
   /* background: linear-gradient(90deg, #4e54c8, #8f94fb); */
-  background: linear-gradient(to left, #f40606, #4e54c8);
+  background: linear-gradient(to left, #f40606, #E8F9FD);
   color: #fff;
   position: sticky;
   top: 0;
   border: 5px solid #f40606;
   border-radius: 10px;
   
+}
+
+.navbar span{
+  color: red
 }
 
 .logo {
@@ -114,9 +118,9 @@
 
 /* Main BODY */
 .main-body {
-  height: 71vh;
+  height: 72vh;
   /* background: linear-gradient(to right, #f5f7fa, #c3cfe2); */
-  background: linear-gradient(to left, #e65151, #6f75e3);
+  background:#E8F9FD;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,12 +160,11 @@
 
 /* FOOTER */
 .footer {
-  background: linear-gradient(to right, #f40606, #4e54c8);
-  color: #ccc;
+  background: #13dce3;
+  color: black;
   padding: 25px;
   text-align: center;
   border-radius: 10px;
-  border: 5px solid#f40606;
 }
 
 .footer-links {
@@ -169,7 +172,7 @@
 }
 
 .footer-links a {
-  color: #ccc;
+  color: black;
   margin: 0 10px;
   text-decoration: none;
   font-size: 14px;

@@ -7,6 +7,7 @@ export const routes: Routes = [
     {path: '', component:Home},
 
     {path:'contact', loadComponent: () => import('./contact/contact').then(m=>m.Contact)},
+    {path:'services', loadComponent: () => import('./services/services').then(m=>m.Services)},
     {path:'signup', loadComponent: ()=>import('./signup/signup').then(m=>m.Signup)},
     {path:'login', loadComponent: () => import('./login/login').then(m=>m.Login)},
     {path: 'product', loadComponent: () => import('./product/product').then(m => m.Product) },
