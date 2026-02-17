@@ -1,0 +1,36 @@
+
+
+  <nav class="navbar">
+    <div class="logo">
+    <img src="logo-12.png" alt="Wonder Biz Logo" />
+    <span>Wonder Biz</span>
+  </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#" [routerLink]="['/services']">Services</a></li>
+      <li><a href="#" [routerLink]="['/contact']">Contact</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+    <button class="login-btn" [routerLink]="['/login']">Login</button>
+    <button class="signup-btn" [routerLink]="['/signup']">Sign Up</button>
+  </div>
+  </nav>
+
+  
+  <section class="main-body">
+    <h1>Welcome from Wonder Biz</h1>
+    <button [routerLink]="['/product']">Get Started</button>
+  </section>
+
+  
+  <footer class="footer">
+    <p>© 2026 Wonder Biz | All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Support</a>
+    </div>
+  </footer>
+

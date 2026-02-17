@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>User CRUD (Reactive Form)</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+
+    <input formControlName="name" placeholder="Enter Name" />
+    <input formControlName="address" placeholder="Enter Address" />
+    <input formControlName="phone" placeholder="Enter Phone" />
+
+    <button type="submit">
+      {{ editId !== null ? 'Update' : 'Add User' }}
+    </button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.phone }}</td>
+        <td>
+          <button (click)="editUser(user)">Edit</button>
+          <button (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
