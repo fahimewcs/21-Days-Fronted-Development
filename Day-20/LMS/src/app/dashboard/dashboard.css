@@ -1,0 +1,593 @@
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  position: sticky;   /* makes it stick */
+  top: 0;             /* stick to top */
+  z-index: 1000; 
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #3EB489, #2D9C7A);
+  color: #fff;
+  padding: 10px 25px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo */
+.logo {
+  width: 50px;
+  height: 55px;
+  object-fit: contain;
+}
+
+/* Brand */
+.brand-name {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Navbar Container Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Toggle Button */
+.sidebar-toggle-btn {
+  background-color: #68f0e2;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: #20a89b;
+  transform: scale(1.05);
+}
+
+
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center input {
+  padding: 6px 10px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  outline: none;
+  width: 250px;
+}
+
+.navbar-center button {
+  padding: 7px 12px;
+  border-radius: 0 20px 20px 0;
+  border: none;
+  background-color: #1F6F5E;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+ .logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 30px;            /* pill shape */
+  border: none;
+  background: #F9FFFD;            /* mint theme complement with soft red for logout */
+  color: #1F6F5E;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Icon size */
+.logout-btn i {
+  font-size: 16px;
+}
+
+/* Hover Effect */
+.logout-btn:hover {
+  transform: translateY(-2px);
+  background: #FF4C4C;            /* darker shade on hover */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  color: #E8F8F3;
+}
+
+
+.sidebar-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: #1F6F5E;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease, transform 0.2s ease;
+}
+
+.cart-btn i {
+  font-size: 18px;
+}
+
+/* Floating Circle Badge */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #3EB489;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+/* Hover / Pop Animation */
+.cart-btn:hover .cart-badge {
+  transform: scale(1.2);
+}
+
+/* Button Hover */
+.cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+
+/* Dashboard body */
+.dashboard-body {
+  display: flex;
+  min-height: calc(100vh - 60px); /* navbar + footer */
+}
+
+/* Sidebar */
+.sidebar {
+  position:fixed;
+  top: 60px;
+  left: 0;
+  width: 70px;
+  height: calc(100vh - 60px);
+
+  background: #1F6F5E;
+  color: #fff;
+  padding-top: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+  overflow-y: auto;
+  overflow: visible;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+.sidebar-links 
+{ list-style: none; 
+  padding: 0; 
+  font-size: 200px;
+}
+
+.sidebar-links li {
+  margin-bottom: 18px;
+}
+
+.sidebar-links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  font-weight: 500;
+  opacity: 0.9;
+  text-decoration: none;
+  color: #E8F8F3;
+  font-size: 2220px;
+  justify-content: center;
+}
+
+
+/* Tooltip (floating text) */
+.sidebar-links a::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 80px;                 /* distance from sidebar */
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1F6F5E;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Show tooltip on hover ONLY when sidebar is collapsed */
+.sidebar:not(.expanded) .sidebar-links a:hover::after {
+  opacity: 1;
+}
+
+/* .sidebar-links a::before {
+  content: "";
+  position: absolute;
+  left: 72px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: #1F6F5E;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.sidebar:not(.expanded) .sidebar-links a:hover::before {
+  opacity: 1;
+} */
+
+.sidebar-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+  opacity: 1;
+}
+
+/* Single Color Icons */
+.sidebar-links .icon {
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.sidebar-links .text {
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.active-link {
+  background: #3EB489;
+  color: white;
+  font-weight: 600;
+}
+
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  margin-left: 70px;
+  background: linear-gradient(to bottom right, #E8F8F3, #ffffff);
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.expanded ~ .main-content,
+.main-content.shifted {
+  margin-left: 220px;          /* expanded sidebar width */
+}
+
+
+
+/* Books Section Title */
+.books-section h2 {
+  color: #1F6F5E;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Book Grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Book Card */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #E8F8F3, #F0FFF9);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 6px 18px rgba(31, 111, 94, 0.1);
+  border: 1px solid rgba(62, 180, 137, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(31, 111, 94, 0.2);
+}
+
+/* Book Image */
+.book-image-wrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.book-image-wrapper img {
+  width: 70%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(62, 180, 137, 0.2);
+}
+
+/* Book Badge */
+.book-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #3EB489;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+/* Book Info */
+.book-info {
+  flex-grow: 1;
+  text-align: left;
+  padding: 0 5px;
+}
+
+.book-info h3 {
+  font-size: 18px;
+  color: #1F6F5E;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.book-info .author {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.book-info .price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2D9C7A;
+  margin-bottom: 10px;
+}
+
+
+
+/* Button Group */
+/* .book-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+} */
+
+/* View Details Button */
+/* .view-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 30px;
+  border: 2px solid #3EB489;
+  background: transparent;
+  color: #1F6F5E;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+} */
+
+/* .view-btn i {
+  font-size: 14px;
+}
+
+.view-btn:hover {
+  background: #3EB489;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(31, 111, 94, 0.2);
+} */
+
+
+/* Add to Cart Button */
+/* .add-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #3EB489, #2D9C7A);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(31, 111, 94, 0.1);
+}
+
+.add-cart-btn i {
+  font-size: 14px;
+}
+
+.add-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(31, 111, 94, 0.2);
+} */
+
+
+.book-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Shared Button Base */
+.view-btn,
+.add-cart-btn {
+  flex: 1;
+  height: 30px;                 /* fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 70px;          /* softer modern look */
+  font-size: 14px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+/* View Details Button */
+.view-btn {
+  border: 2px solid #3EB489;
+  background: rgba(62, 180, 137, 0.08);
+  color: #1F6F5E;
+}
+
+.view-btn i {
+  font-size: 14px;
+}
+
+.view-btn:hover {
+  background: #3EB489;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(62, 180, 137, 0.25);
+}
+
+/* Add to Cart Button */
+.add-cart-btn {
+  border: none;
+  background: linear-gradient(135deg, #3EB489, #2D9C7A);
+  color: white;
+  box-shadow: 0 4px 12px rgba(31, 111, 94, 0.15);
+}
+
+.add-cart-btn i {
+  font-size: 14px;
+}
+
+.add-cart-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(31, 111, 94, 0.25);
+}
+
+/* Click Effect */
+.view-btn:active,
+.add-cart-btn:active {
+  transform: scale(0.97);
+}
+
+
+.add-cart-btn.added {
+  background: #cfcfcf;   /* ash color */
+  color: #666;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.add-cart-btn.added:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+
+
+
+.book-card:nth-child(n) {
+  background: linear-gradient(145deg, #6ae0b1, #E0F7EE);
+}
+.book-card:nth-child(n+1) {
+  background: linear-gradient(145deg, #45dca5, #f2f4f3);
+}
+
+.book-card:nth-child(3n+1) {
+  background: linear-gradient(145deg, #f8faf7, #36f498);
+}
+
+
+
+
+.icon {
+  font-size: 18px;
+  width: 30px;
+  text-align: center;
+  color: white;
+  opacity: 0.9;
+}
+
+.sidebar-links a:hover .icon {
+  opacity: 1;
+}
+
+
+
+
+/* Footer */
+.footer {
+  position: sticky;
+  width: 100%;
+  background-color: #3EB489;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  z-index: 1001;
+}

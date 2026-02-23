@@ -1,0 +1,57 @@
+<canvas id="particles-canvas" class="particles-background"></canvas>
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="lmslogo.png" alt="Logo" class="logo">
+    <span class="brand-name">Knowledge House</span>
+  </div>
+
+  <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="navbar-center">
+    <input type="text" formControlName="searchText" placeholder="Search books"/>
+    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+
+  <!-- <div class="navbar-right">
+    <button routerLink="/login" class="login-btn">Login</button>
+    <button routerLink="/signup" class="register-btn">Register</button>
+  </div>-->
+  <div class="navbar-right">
+  <button routerLink="/login" class="btn login-btn">
+    <i class="fas fa-sign-in-alt"></i> Login
+  </button>
+  <button routerLink="/signup" class="btn signup-btn">
+    <i class="fas fa-user-plus"></i> Sign Up
+  </button>
+</div>
+
+</nav>
+
+<div class="main-content">
+
+  <section class="hero">
+    <h1>Welcome to Knowledge House</h1>
+    <p>Discover thousands of books from different categories.</p>
+  </section>
+
+  <section class="books-section">
+    <h2>Popular Books</h2>
+
+    <div class="book-grid">
+      <div class="book-card" *ngFor="let book of books">
+        <img [src]="book.image" alt="Book Cover">
+        <h3>{{ book.title }}</h3>
+        <p class="author">by {{ book.author }}</p>
+        <button>View Details</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2026 Knowledge House. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
